@@ -14,7 +14,7 @@ class CreateCategoryPostTable extends Migration
     public function up()
     {
         Schema::create('category_post', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->foreignId('category_id')
                 ->constrained()
                 ->onUpdate('CASCADE')

@@ -22,11 +22,11 @@
         <div class="c-header__row ">
             <div class="c-header__right">
                 <div class="logo">
-                    <a href="{{ route('landing') }}" ></a>
+                    <a href="{{ route('landing') }}" class=""></a>
                 </div>
                 <div class="c-search width-100 ">
-                    <form action="" class="c-search__form position-relative">
-                        <input type="text" class="c-search__input" placeholder="جستجو کنید">
+                    <form action="{{ route('post.search') }}" class="c-search__form position-relative">
+                        <input type="text" name="search" class="c-search__input" placeholder="جستجو کنید" value="{{ request()->search ?? '' }}">
                         <button class="c-search__button"></button>
                     </form>
                 </div>
@@ -74,13 +74,13 @@
         </div>
         <div class="container container--nav">
             <ul class="nav__ul">
-                <li class="nav__item"><a href="#" class="nav__link">صفحه اصلی</a></li>
+                <li class="nav__item"><a href="{{ route('landing') }}" class="nav__link">صفحه اصلی</a></li>
                 @foreach($categories as $category)
-                <li class="nav__item nav__item--has-sub"><a href="#" class="nav__link">{{ $category->name }}</a>
+                <li class="nav__item nav__item--has-sub"><a href="{{ route('category.show', $category->slug) }}" class="nav__link">{{ $category->name }}</a>
                     <div class="nav__sub">
                         <div class="container d-flex item-center flex-wrap container--nav">
                             @foreach($category->children as $childCategory)
-                                <a href="" class="nav__link">{{ $childCategory->name }}</a>
+                                <a href="{{ route('category.show', $childCategory->slug) }}" class="nav__link">{{ $childCategory->name }}</a>
                             @endforeach
                         </div>
                     </div>
@@ -92,6 +92,7 @@
         </div>
     </nav>
 </header>
+
 @yield('main')
 
 <footer class="footer">
@@ -108,10 +109,14 @@
         </div>
         <div class="footer__hr"></div>
         <div class="footer__about">
-        >
+            <p class="footer__txt">
+             <h1 >
+                 با خدا باش پادشاهی کن
+             </h1>
+            </p>
         </div>
     </div>
-
+ 
 
 </footer>
 <div class="overlay"></div>
@@ -126,6 +131,7 @@ function logoutUser() {
     document.getElementById('logout-form').submit();
 }
 </script>
+{{ $scripts ?? '' }}
 
 </body>
 </html>

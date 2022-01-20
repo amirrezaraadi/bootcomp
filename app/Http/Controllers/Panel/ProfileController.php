@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\panel;
+namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Panel\User\UpdateProfileRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\Profile\UpdateProfileRequest;
+
 
 class ProfileController extends Controller
 {
@@ -42,6 +43,8 @@ class ProfileController extends Controller
 
         session()->flash('status', 'اطلاعات کاربری شما ویرایش شد!');
 
-        return back();
+        return back(); 
     }
+    
+    
 }

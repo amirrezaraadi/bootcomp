@@ -14,3 +14,4 @@ class ShowPostCategoryController extends Controller
         return view('landing', compact('posts'));
     }
 }
+

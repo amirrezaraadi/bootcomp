@@ -27,8 +27,8 @@ class UpdatePostRequest extends FormRequest
             'title' => ['required', 'string', 'max:255'],
             'categories' => ['required', 'array'],
             'categories.*' => ['required', 'string'],
-            'banner' => ['nullable', 'image'],
+            'banner' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg'],
             'content' => ['required']
         ];
-    }
+    } 
 }

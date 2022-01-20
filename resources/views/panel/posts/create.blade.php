@@ -19,9 +19,13 @@
                 <p class="error">{{ $message }}</p>
               @enderror
 
+
+          
+
               <p>دسته بندی های مقاله</p>
               <ul class="tags">
                   <li class="tagAdd taglist">
+                   
                       <input type="text" id="search-field">
                   </li>
               </ul>
@@ -48,10 +52,12 @@
               @enderror
 
               <button class="btn btn-webamooz_net">ایجاد مقاله</button>
+            
           </form>
       </div>
   </div>
 </div>
+
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 <script>
 CKEDITOR.replace('content', {
@@ -62,4 +68,6 @@ filebrowserUploadMethod: 'form'
 </script>
 
 <script src="{{ asset('blog/panel/js/tagsInput.js') }}"></script>
+
+
 @endsection

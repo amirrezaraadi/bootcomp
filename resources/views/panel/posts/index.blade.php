@@ -64,11 +64,12 @@
         {{ $posts->appends(request()->query())->links() }}
     </div>
 </div>
+
     <script>
         function destroyPost(event, id) {
             event.preventDefault();
             document.getElementById('destroy-post-' + id).submit();
         }
     </script>
-   
+
 @endsection

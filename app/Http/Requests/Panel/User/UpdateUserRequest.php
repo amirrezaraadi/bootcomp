@@ -2,14 +2,12 @@
 
 namespace App\Http\Requests\Panel\User;
 
-use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule as ValidationRule;
-use TijsVerkoyen\CssToInlineStyles\Css\Rule\Rule as RuleRule;
+use Illuminate\Validation\Rule;
 
 class UpdateUserRequest extends FormRequest
 {
-        /**
+    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool

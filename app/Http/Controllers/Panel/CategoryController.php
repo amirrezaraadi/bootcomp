@@ -9,7 +9,6 @@ use App\Http\Requests\Panel\Category\CategoryUpdateRequest;
 
 class CategoryController extends Controller
 {
- 
     public function index()
     {
         $categories = Category::with('parent')->paginate();
@@ -20,6 +19,7 @@ class CategoryController extends Controller
 
     public function store(CategoryCreateRequest $request)
     {
+      
         Category::create(
             $request->validated()
         );

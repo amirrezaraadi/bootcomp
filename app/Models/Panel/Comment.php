@@ -40,10 +40,10 @@ class Comment extends Model
         return $this->replies()->where('is_approved' , true);
     }
 
-    public function getCreatedAtInJalali()
-    {
-        return verta($this->created_at)->format('Y/m/d');
-    }
+    // public function getCreatedAtInJalali()
+    // {
+    //     return verta($this->created_at)->format('Y/m/d');
+    // }
 
     public function getStatusInFarsi()
     {

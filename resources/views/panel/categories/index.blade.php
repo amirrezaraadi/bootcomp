@@ -30,8 +30,14 @@
                           <td>{{ $category->slug }}</td>
                           <td>{{ $category->getParentName() }}</td>
                           <td>
-                              <a href="{{ route('categories.destroy', $category->id) }}" onclick="destroyCategory(event, {{ $category->id }})" class="item-delete mlg-15" title="حذف"></a>
-                              <a href="{{ route('categories.edit', $category->id) }}" class="item-edit " title="ویرایش"></a>
+                              <a href="{{ route('categories.destroy', $category->id) }}" onclick="destroyCategory(event, {{ $category->id }})" class="item-delete mlg-15" title="حذف"
+                                style="background-color: rgb(247, 240, 145)"
+
+                                ></a>
+                              <a href="{{ route('categories.edit', $category->id) }}" class="item-edit " title="ویرایش"
+                                style="background-color: rgb(162, 162, 162)"
+
+                                ></a>
                               <form action="{{ route('categories.destroy', $category->id) }}" method="POST" id="destroy-category-{{ $category->id }}">
                                 @csrf
                                 @method('delete')

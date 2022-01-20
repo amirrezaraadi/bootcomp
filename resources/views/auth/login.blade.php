@@ -17,7 +17,7 @@
                     @enderror
                         
                    
-                    <input type="pass" name="password" class="text text--left" placeholder="رمز عبور">
+                    <input type="password" name="password" class="text text--left" placeholder="رمز عبور">
 
                     @error('password')
 

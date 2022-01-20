@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Panel;
 
 use App\Models\Post;
-use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Panel\Post\CreatePostRequest;
 use App\Http\Requests\Panel\Post\UpdatePostRequest;
+use App\Models\Category;
 use Illuminate\Validation\ValidationException;
 
 class PostController extends Controller
@@ -43,7 +43,7 @@ class PostController extends Controller
 
     public function store(CreatePostRequest $request)
     {
-        $categoryIds = Category::whereIn('name', $request->categories)->get()->pluck('id')->toArray();
+        $categoryIds = Category::whereIn('name', $request->categories)->get();
 
         if(count($categoryIds) < 1) {
             throw ValidationException::withMessages([

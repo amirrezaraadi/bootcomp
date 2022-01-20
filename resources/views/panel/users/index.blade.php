@@ -19,7 +19,9 @@
     <div class="bg-white table__box">
         <table class="table">
             <thead role="rowgroup">
-            <tr role="row" class="title-row">
+            <tr role="row" class="title-row" 
+            style="background-color: rgb(162, 162, 162)"
+            >
                 <th>شناسه</th>
                 <th>نام و نام خانوادگی</th>
                 <th>ایمیل</th>
@@ -31,7 +33,7 @@
             </thead>
             <tbody>
               @foreach($users as $user)
-                <tr role="row" class="">
+                <tr role="row" >
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
@@ -40,9 +42,15 @@
                     <td>{{ $user->getCreatedAtInJalali() }}</td>
                     <td>
                         @if(auth()->user()->id !== $user->id && $user->role !== 'admin')
-                        <a href="{{ route('users.destroy', $user->id) }}" onclick="destroyUser(event, {{ $user->id }})" class="item-delete mlg-15" title="حذف"></a>
+                        <a href="{{ route('users.destroy', $user->id) }}" onclick="destroyUser(event, {{ $user->id }})" class="item-delete mlg-15" title="حذف"
+                          style="background-color: rgb(162, 162, 162)"
+
+                          ></a>
                         @endif
-                        <a href="{{ route('users.edit', $user->id) }}" class="item-edit " title="ویرایش"></a>
+                        <a href="{{ route('users.edit', $user->id) }}" class="item-edit " title="ویرایش"
+                          style="background-color: rgb(255, 233, 133)"
+
+                          ></a>
                         <form action="{{ route('users.destroy', $user->id) }}" method="post" id="destroy-user-{{ $user->id }}">
                           @csrf
                           @method('delete')

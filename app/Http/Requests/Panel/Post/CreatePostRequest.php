@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CreatePostRequest extends FormRequest
 {
-     /**
+    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
@@ -25,7 +25,6 @@ class CreatePostRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:255'],
-            'categories' => ['required', 'array'],
             'categories.*' => ['required', 'string'],
             'banner' => ['required', 'image'],
             'content' => ['required']

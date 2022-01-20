@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('main')
-
 <main>
     <article class="container article">
         <div class="articles">
@@ -27,5 +26,4 @@
     </article>
     {{ $posts->appends(request()->query())->links() }}
 </main>
-
 @endsection

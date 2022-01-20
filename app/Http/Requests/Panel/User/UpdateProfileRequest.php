@@ -1,11 +1,9 @@
 <?php
 
-namespace App\Http\Requests\Profile;
+namespace App\Http\Requests\Panel\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
-
-
 
 class UpdateProfileRequest extends FormRequest
 {
@@ -27,12 +25,11 @@ class UpdateProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            'profile' =>['nullable' , 'image' , 'max:2024'],
-            'name' => ['required' , 'string' , 'max:255'],
-            'mobile' => ['required' , 'string' , 'max:255' , Rule::unique('users')->ignore(auth()->user()->id)],
-            'email' => ['required' , 'string','email' , 'max:255' , Rule::unique('users')->ignore(auth()->user()->id)],
-            'password' => ['nullable' , 'min:8']
-
+            'profile' => ['nullable', 'image', 'max:2024'],
+            'name' => ['required', 'string', 'max:255'],
+            'mobile' => ['required', 'string', 'max:255', Rule::unique('users')->ignore(auth()->user()->id)],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(auth()->user()->id)],
+            'password' => ['nullable', 'min:8']
         ];
     }
 }

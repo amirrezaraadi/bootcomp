@@ -21,6 +21,6 @@ class IsAuthorMiddleware
             abort(403, 'شما دسترسی لازم برای ورود به این صفحه را ندارید!');
         }
 
-        return $next($request);
+        return $request;
     }
 }

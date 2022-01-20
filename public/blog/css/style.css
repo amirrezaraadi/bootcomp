@@ -1286,4 +1286,57 @@ textarea {
     .dropdown__notification::before {
         left: 67px;
     }
+    .dropdown__notification {
+        width: 20%;
+        min-width: 320px;
+        padding: 20px;
+        background: #fff;
+        margin-top: 15px;
+        border: 1px solid rgba(0, 0, 0, .1);;
+        position: absolute;
+        left: 27px;
+        /*z-index: 324;*/
+        display: none;
+    }
+    
+    .dropdown__notification.is-active {
+        display: flex;
+    }
+    
+    .dropdown__notification::before {
+        border: 1px solid rgba(0, 0, 0, .1);
+        border-bottom-color: rgba(0, 0, 0, 0.1);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-left-color: rgba(0, 0, 0, 0.1);
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-bottom-color: rgba(0, 0, 0, 0.1);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-left-color: rgba(0, 0, 0, 0.1);
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-left: 0;
+        border-bottom: 0;
+        content: "";
+        display: block;
+        height: 12px;
+        pointer-events: none;
+        position: absolute;
+        transform: rotate(-45deg);
+        width: 12px;
+        background-color: #fff;
+        top: -8px;
+        left: 38px;
+        z-index: 50;
+    }
+    
+    .dropdown__notification .content__notification {
+        overflow-y: auto;
+        max-height: 300px;
+        overflow-x: hidden;
+        text-align: center;
+    }
+    
 }
